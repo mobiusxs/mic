@@ -4,4 +4,10 @@
 
 {% block content %}
   <h1>Dashboard</h1>
+  <ul>
+    <li>Name: {{ user.name }}</li>
+    <li>ID: {{ user.character_id }}</li>
+    <li>Corp: {{ user.corporation_id }}</li>
+    <li>Alliance: {{ user.alliance_id }}</li>
+  </ul>
 {% endblock %}
