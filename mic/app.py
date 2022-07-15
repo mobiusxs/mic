@@ -9,3 +9,5 @@ def create_app():
 
 
 def register_blueprints(app):
+    from mic.dashboard.views import dashboard
+    app.register_blueprint(dashboard)
