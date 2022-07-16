@@ -9,8 +9,10 @@ def create_app():
 
 
 def register_blueprints(app):
+    from mic.admin.views import admin
     from mic.auth.views import auth
     from mic.dashboard.views import dashboard
 
+    app.register_blueprint(admin)
     app.register_blueprint(auth)
     app.register_blueprint(dashboard)
