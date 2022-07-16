@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Whitelist{% endblock %}
+
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <h1>Whitelist</h1>
+
+  <form action="/admin/whitelist" method="post">
+    <label for="whitelist-id">
+      <input name='whitelist-id' type="text" placeholder="Entity ID">
+    </label>
+    <input type="submit" value="Add to Whitelist">
+  </form>
+
+  <ul>
+    {% for id in ids %}
+      <li>{{ id }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
