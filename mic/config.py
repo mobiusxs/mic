@@ -1,8 +1,11 @@
 from os import environ
+from pathlib import Path
 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+ROOT = Path(__file__).parent.parent
 
 EVE_CLIENT_ID = environ.get('EVE_CLIENT_ID')
 EVE_SECRET_KEY = environ.get('EVE_SECRET_KEY')
