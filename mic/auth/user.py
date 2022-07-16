@@ -27,9 +27,7 @@ def is_authorized():
 def is_admin():
     if not is_authenticated():
         return False
-    # TODO: Implement admin check
-    # example: check if character in admin list
-    raise NotImplementedError
+    return True
 
 
 def get_user():
