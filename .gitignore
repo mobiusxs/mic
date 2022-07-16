@@ -2,3 +2,7 @@
 __pycache__/
 .env
 db.sqlite3
+
+# ignore migrations while models in development
+# TODO: remove
+migrations/
