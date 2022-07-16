@@ -20,7 +20,7 @@ def auth_context():
     return {
         'is_authenticated': is_authenticated(),
         # 'is_authorized': is_authorized(),
-        # 'is_admin': is_admin(),
+        'is_admin': is_admin(),
     }
 
 
