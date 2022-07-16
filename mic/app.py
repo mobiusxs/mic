@@ -1,9 +1,11 @@
 from flask import Flask
 
+from mic import config
+
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = '123'
+    app.config.from_object(config)
 
     register_blueprints(app)
     return app
