@@ -6,15 +6,15 @@
   <h1>Admin</h1>
 
   <form action="/admin" method="post">
-    <label for="admin-id">
-      <input name='admin-id' type="text" placeholder="New Admin">
-    </label>
-    <input type="submit" value="Add Admin">
+    {{ form.hidden_tag() }}
+    {{ form.character_id.label }} {{ form.character_id }}
+    <input type="submit" value="Go">
   </form>
 
   <ul>
     {% for admin in admins %}
-      <li>{{ admin }}</li>
+      <li>{{ admin['character_id'] }}</li>
     {% endfor %}
   </ul>
+
 {% endblock %}
