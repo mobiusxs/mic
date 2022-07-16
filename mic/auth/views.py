@@ -26,6 +26,8 @@ def auth_context():
 
 @auth.route('/login')
 def login():
+    if is_authenticated():
+        return redirect(url_for(config.LOGIN_REDIRECT_VIEW))
     return render_template('auth/login.html')
 
 
