@@ -1,0 +1,14 @@
+<nav>
+  {% if is_authenticated %}
+    <a href="{{ url_for('dashboard.index') }}">Dashboard</a>
+
+    {% if is_admin %}
+      <a href="{{ url_for('admin.index') }}">Admin</a>
+      <a href="{{ url_for('admin.whitelist') }}">Whitelist</a>
+      <a href="{{ url_for('admin.fits') }}">Fits</a>
+      <a href="{{ url_for('admin.structures') }}">Structure</a>
+    {% endif %}
+
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+  {% endif %}
+</nav>
