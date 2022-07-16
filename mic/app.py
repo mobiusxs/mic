@@ -9,6 +9,7 @@ def create_app():
 
     register_extensions(app)
     register_blueprints(app)
+    register_shellcontext(app)
     return app
 
 
@@ -27,3 +28,14 @@ def register_blueprints(app):
     app.register_blueprint(admin)
     app.register_blueprint(auth)
     app.register_blueprint(dashboard)
+
+
+def register_shellcontext(app):
+    from mic.extensions import db
+
+    def shell_context():
+        return {
+            "db": db,
+        }
+
+    app.shell_context_processor(shell_context)
